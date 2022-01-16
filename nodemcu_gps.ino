@@ -1,15 +1,28 @@
+//Firebase bağlantısı için gerekli kütüphane
 #include <FirebaseESP8266.h>
+
+//NodeMCU Wi-Fi modülü kütüphanesi
 #include <ESP8266WiFi.h>
+
+//Bu iki kütüphane Neo-6m gps modülü için gerekli kütüphanelerdir
 #include <SoftwareSerial.h>
 #include <TinyGPS++.h>
 
+//Firebase üzerindeki RealTime database adlı yapının adresi
 #define FIREBASE_HOST "nodemcuneo6m-default-rtdb.firebaseio.com"
+
+//Firebase projenizin Secret Database key'i
 #define FIREBASE_AUTH "QdGyBZPZ3sZietuvQW2yOQWffevAQK7UrxiC3kXf"
+
+
+//Wi-Fi üzerinden geliştirdiğimiz için gerekli SSID ve PASSWORD
 #define WIFI_SSID "TurkTelekom_ZT3NT"
 #define WIFI_PASSWORD "979E362712914"
 
+//Firebase Database üzerine kaydedeceğimiz veriler için oluştuduğumuz FirebaseData nesnesi
 FirebaseData firebaseData;
 
+//Firebase'e gps verilerinin aktarımında kullanılacak bağlantıların sağlanması için gerekli nesne
 FirebaseJson json;
 
 const int RXPin = 4, TXPin = 5;
